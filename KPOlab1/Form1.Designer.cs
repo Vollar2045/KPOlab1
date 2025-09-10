@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             buttonGenerate = new Button();
             labelArray = new Label();
             labelResult = new Label();
@@ -68,9 +70,10 @@
             // 
             // buttonGenerate
             // 
-            buttonGenerate.Location = new Point(363, 188);
+            buttonGenerate.Anchor = AnchorStyles.Top;
+            buttonGenerate.Location = new Point(292, 188);
             buttonGenerate.Name = "buttonGenerate";
-            buttonGenerate.Size = new Size(142, 23);
+            buttonGenerate.Size = new Size(205, 23);
             buttonGenerate.TabIndex = 0;
             buttonGenerate.Text = "Сгенерировать массив";
             buttonGenerate.UseVisualStyleBackColor = true;
@@ -78,6 +81,7 @@
             // 
             // labelArray
             // 
+            labelArray.Anchor = AnchorStyles.Top;
             labelArray.AutoSize = true;
             labelArray.Location = new Point(363, 231);
             labelArray.Name = "labelArray";
@@ -87,6 +91,7 @@
             // 
             // labelResult
             // 
+            labelResult.Anchor = AnchorStyles.Top;
             labelResult.AutoSize = true;
             labelResult.Location = new Point(363, 265);
             labelResult.Name = "labelResult";
@@ -96,9 +101,10 @@
             // 
             // buttonCalculate
             // 
+            buttonCalculate.Anchor = AnchorStyles.Top;
             buttonCalculate.Location = new Point(511, 188);
             buttonCalculate.Name = "buttonCalculate";
-            buttonCalculate.Size = new Size(142, 23);
+            buttonCalculate.Size = new Size(196, 23);
             buttonCalculate.TabIndex = 3;
             buttonCalculate.Text = "Вычислить среднее";
             buttonCalculate.UseVisualStyleBackColor = true;
@@ -112,6 +118,7 @@
             tabControl1.Controls.Add(tab4);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(3, 3);
+            tabControl1.Multiline = true;
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1018, 556);
@@ -150,8 +157,9 @@
             // 
             // labelHint
             // 
+            labelHint.Anchor = AnchorStyles.Top;
             labelHint.AutoSize = true;
-            labelHint.Location = new Point(345, 26);
+            labelHint.Location = new Point(295, 26);
             labelHint.Name = "labelHint";
             labelHint.Size = new Size(404, 15);
             labelHint.TabIndex = 6;
@@ -161,25 +169,44 @@
             // 
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.Anchor = AnchorStyles.Top;
             dataGridView2.BackgroundColor = SystemColors.Control;
+            dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(345, 186);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Transparent;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.GridColor = SystemColors.ControlText;
+            dataGridView2.Location = new Point(354, 190);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
-            dataGridView2.Size = new Size(345, 352);
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView2.Size = new Size(286, 332);
             dataGridView2.TabIndex = 5;
             // 
             // textBoxInput
             // 
-            textBoxInput.Location = new Point(345, 53);
+            textBoxInput.Anchor = AnchorStyles.Top;
+            textBoxInput.Location = new Point(295, 53);
             textBoxInput.Name = "textBoxInput";
             textBoxInput.Size = new Size(283, 23);
             textBoxInput.TabIndex = 4;
             // 
             // labelResultArray
             // 
+            labelResultArray.Anchor = AnchorStyles.Top;
             labelResultArray.AutoSize = true;
-            labelResultArray.Location = new Point(345, 159);
+            labelResultArray.Location = new Point(295, 159);
             labelResultArray.Name = "labelResultArray";
             labelResultArray.Size = new Size(66, 15);
             labelResultArray.TabIndex = 3;
@@ -187,8 +214,9 @@
             // 
             // labelOriginalArray
             // 
+            labelOriginalArray.Anchor = AnchorStyles.Top;
             labelOriginalArray.AutoSize = true;
-            labelOriginalArray.Location = new Point(345, 133);
+            labelOriginalArray.Location = new Point(295, 133);
             labelOriginalArray.Name = "labelOriginalArray";
             labelOriginalArray.Size = new Size(112, 15);
             labelOriginalArray.TabIndex = 2;
@@ -196,7 +224,8 @@
             // 
             // buttonCalculate2
             // 
-            buttonCalculate2.Location = new Point(345, 93);
+            buttonCalculate2.Anchor = AnchorStyles.Top;
+            buttonCalculate2.Location = new Point(295, 93);
             buttonCalculate2.Name = "buttonCalculate2";
             buttonCalculate2.Size = new Size(186, 23);
             buttonCalculate2.TabIndex = 1;
@@ -206,7 +235,8 @@
             // 
             // buttonInputArray
             // 
-            buttonInputArray.Location = new Point(634, 53);
+            buttonInputArray.Anchor = AnchorStyles.Top;
+            buttonInputArray.Location = new Point(584, 53);
             buttonInputArray.Name = "buttonInputArray";
             buttonInputArray.Size = new Size(184, 23);
             buttonInputArray.TabIndex = 0;
@@ -229,14 +259,21 @@
             // 
             // dataGridView3
             // 
+            dataGridView3.Anchor = AnchorStyles.Top;
+            dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView3.BackgroundColor = SystemColors.Control;
+            dataGridView3.BorderStyle = BorderStyle.None;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(13, 209);
+            dataGridView3.Location = new Point(153, 213);
             dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(1000, 279);
+            dataGridView3.RowHeadersVisible = false;
+            dataGridView3.RowHeadersWidth = 20;
+            dataGridView3.Size = new Size(686, 287);
             dataGridView3.TabIndex = 3;
             // 
             // labelInfo3
             // 
+            labelInfo3.Anchor = AnchorStyles.Top;
             labelInfo3.AutoSize = true;
             labelInfo3.Location = new Point(465, 182);
             labelInfo3.Name = "labelInfo3";
@@ -246,6 +283,7 @@
             // 
             // buttonConvert3
             // 
+            buttonConvert3.Anchor = AnchorStyles.Top;
             buttonConvert3.Location = new Point(502, 108);
             buttonConvert3.Name = "buttonConvert3";
             buttonConvert3.Size = new Size(116, 23);
@@ -256,6 +294,7 @@
             // 
             // buttonGenerate3
             // 
+            buttonGenerate3.Anchor = AnchorStyles.Top;
             buttonGenerate3.Location = new Point(322, 108);
             buttonGenerate3.Name = "buttonGenerate3";
             buttonGenerate3.Size = new Size(146, 23);
@@ -280,36 +319,48 @@
             // 
             // labelInfo4
             // 
+            labelInfo4.Anchor = AnchorStyles.Top;
             labelInfo4.AutoSize = true;
-            labelInfo4.Location = new Point(473, 154);
+            labelInfo4.Location = new Point(412, 152);
             labelInfo4.Name = "labelInfo4";
-            labelInfo4.Size = new Size(38, 15);
+            labelInfo4.Size = new Size(127, 15);
             labelInfo4.TabIndex = 4;
-            labelInfo4.Text = "label1";
+            labelInfo4.Text = "Сгенерируйте массив";
             // 
             // dataGridView4
             // 
+            dataGridView4.Anchor = AnchorStyles.Top;
+            dataGridView4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView4.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView4.BackgroundColor = SystemColors.Control;
+            dataGridView4.BorderStyle = BorderStyle.None;
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(13, 214);
+            dataGridView4.Location = new Point(83, 214);
             dataGridView4.Name = "dataGridView4";
-            dataGridView4.Size = new Size(408, 155);
+            dataGridView4.RowHeadersVisible = false;
+            dataGridView4.RowHeadersWidth = 15;
+            dataGridView4.Size = new Size(413, 186);
             dataGridView4.TabIndex = 3;
             // 
             // dataGridViewResults4
             // 
+            dataGridViewResults4.Anchor = AnchorStyles.Top;
             dataGridViewResults4.BackgroundColor = SystemColors.Control;
+            dataGridViewResults4.BorderStyle = BorderStyle.None;
             dataGridViewResults4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewResults4.Location = new Point(533, 214);
+            dataGridViewResults4.Location = new Point(627, 214);
             dataGridViewResults4.Name = "dataGridViewResults4";
-            dataGridViewResults4.Size = new Size(280, 216);
+            dataGridViewResults4.RowHeadersVisible = false;
+            dataGridViewResults4.RowHeadersWidth = 51;
+            dataGridViewResults4.Size = new Size(248, 242);
             dataGridViewResults4.TabIndex = 2;
             // 
             // buttonCalculate4
             // 
-            buttonCalculate4.Location = new Point(421, 111);
+            buttonCalculate4.Anchor = AnchorStyles.Top;
+            buttonCalculate4.Location = new Point(412, 111);
             buttonCalculate4.Name = "buttonCalculate4";
-            buttonCalculate4.Size = new Size(135, 23);
+            buttonCalculate4.Size = new Size(157, 23);
             buttonCalculate4.TabIndex = 1;
             buttonCalculate4.Text = "Найти среднее";
             buttonCalculate4.UseVisualStyleBackColor = true;
@@ -317,6 +368,7 @@
             // 
             // buttonGenerate4
             // 
+            buttonGenerate4.Anchor = AnchorStyles.Top;
             buttonGenerate4.Location = new Point(412, 82);
             buttonGenerate4.Name = "buttonGenerate4";
             buttonGenerate4.Size = new Size(157, 23);
@@ -346,6 +398,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1024, 562);
             Controls.Add(tableLayoutPanel1);
+            MinimumSize = new Size(900, 600);
             Name = "Form1";
             Text = "Form1";
             tabControl1.ResumeLayout(false);

@@ -8,8 +8,8 @@ namespace KPOlab1
         private int[] array;
         public Form1()
         {
-            InitializeComponent();            
-        }     
+            InitializeComponent();
+        }
         private void buttonGenerate_Click(object sender, EventArgs e)
         {
             GenerateArray();
@@ -220,7 +220,7 @@ namespace KPOlab1
             int cols = array.GetLength(1);
             for (int j = 0; j < cols; j++)
             {
-                dataGridView3.Columns.Add($"col{j}", $"Столбец {j + 1}");
+                dataGridView3.Columns.Add($"col{j}", $"Ст. {j + 1}");
             }
             int rows = array.GetLength(0);
             for (int i = 0; i < rows; i++)
@@ -258,22 +258,22 @@ namespace KPOlab1
             }
             CalculateColumnAverages();
             DisplayAverages();
-        }       
+        }
         private void GenerateArrayA()
         {
             Random random = new Random();
-            int rows = random.Next(1,5); 
-            int cols = random.Next(1,7); 
+            int rows = random.Next(1, 5);
+            int cols = random.Next(1, 7);
             arrayA = new int[rows, cols];
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
-                {                    
+                {
                     arrayA[i, j] = random.Next(30, 76);
                 }
             }
             columnAverages = null;
-        }       
+        }
         private void CalculateColumnAverages()
         {
             int rows = arrayA.GetLength(0);
@@ -288,7 +288,7 @@ namespace KPOlab1
                 }
                 columnAverages[j] = (double)sum / rows;
             }
-        }        
+        }
         private void DisplayArrayA()
         {
             if (dataGridView4 == null) return;
@@ -296,11 +296,11 @@ namespace KPOlab1
             dataGridView4.Columns.Clear();
             dataGridView4.AllowUserToAddRows = false;
             int rows = arrayA.GetLength(0);
-            int cols = arrayA.GetLength(1);            
+            int cols = arrayA.GetLength(1);
             for (int j = 0; j < cols; j++)
             {
-                dataGridView4.Columns.Add($"col{j}", $"Столбец {j + 1}");
-                dataGridView4.Columns[j].Width = 60;
+                dataGridView4.Columns.Add($"col{j}", $"Ст. {j + 1}");
+                dataGridView4.Columns[j].Width = 30;
             }
             for (int i = 0; i < rows; i++)
             {
@@ -313,14 +313,14 @@ namespace KPOlab1
                 }
             }
             labelInfo4.Text = $"Массив A[1..{rows}, 1..{cols}] заполнен числами [30, 75]";
-        }      
+        }
         private void DisplayAverages()
         {
             if (dataGridViewResults4 == null) return;
             dataGridViewResults4.Rows.Clear();
             dataGridViewResults4.Columns.Clear();
             dataGridViewResults4.AllowUserToAddRows = false;
-            int cols = columnAverages.Length;            
+            int cols = columnAverages.Length;
             dataGridViewResults4.Columns.Add("Column", "Столбец");
             dataGridViewResults4.Columns.Add("Average", "Среднее арифметическое");
             dataGridViewResults4.Columns[0].Width = 80;
@@ -328,11 +328,11 @@ namespace KPOlab1
             for (int j = 0; j < cols; j++)
             {
                 int rowIndex = dataGridViewResults4.Rows.Add();
-                dataGridViewResults4.Rows[rowIndex].Cells["Column"].Value = $"Столбец {j + 1}";
+                dataGridViewResults4.Rows[rowIndex].Cells["Column"].Value = $"{j + 1}";
                 dataGridViewResults4.Rows[rowIndex].Cells["Average"].Value = columnAverages[j].ToString("F2");
                 dataGridViewResults4.Rows[rowIndex].Cells["Average"].Style.BackColor = Color.LightGreen;
                 dataGridViewResults4.Rows[rowIndex].Cells["Average"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-        }             
+        }
     }
 }
